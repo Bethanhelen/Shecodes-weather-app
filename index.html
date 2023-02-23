@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather app</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
 </head>
 <body>
 
@@ -17,17 +18,17 @@
 
     <div class="country">
       <div class="city">
-        <h1>New York</h1>
-        <h2>☁ 
-          <span class="wet">21</span>
-          <span class="units">°C | <a href="#">°F</a></span>
-        </h2>
+        <h1 id="city"></h1>
+        <h2>☁ </h2>
+        <span class="wet" id="temperature"></span>
+        <span class="units">°C | <a href="#">°F</a></span>
+       
       </div>
       <div class="time">
         <h6>
-          Tuesday 11:15 minutes <br />
-          clouds
+          Tuesday 11:15 minutes
         </h6>
+        <h6 id="description"></h6>
       </div>
     </div>
 

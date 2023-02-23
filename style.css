@@ -80,6 +80,7 @@ body {
 .wet{
   font-size:60px ;
   font-weight: 500;
+  color: #1d71f2;
 }
 .units{
   position: relative;
@@ -88,6 +89,7 @@ body {
   top: -34px;
   cursor: pointer;
   left: -30px;
+  color: #1d71f2;
 }
 a{
   text-decoration: none;
