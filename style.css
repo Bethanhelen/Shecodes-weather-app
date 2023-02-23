@@ -104,6 +104,9 @@ a{
   color: #1d71f2;
   cursor: default;
 }
+#description:first-letter{
+  text-transform: capitalize;
+}
 /* weather details */
 
 .weather {
