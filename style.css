@@ -67,7 +67,7 @@ body {
   color: #1d71f2;
 }
 
-.city h2 {
+.icon {
   font-size: 100px;
   color: #1d71f2;
 }
@@ -86,13 +86,17 @@ body {
   position: relative;
   font-size:16px ;
   font-weight: 700;
-  top: -34px;
+  top: -20px;
   cursor: pointer;
-  left: -30px;
+  left: -45px;
   color: #1d71f2;
 }
 a{
   text-decoration: none;
+}
+.describe{
+  display: flex;
+  align-items: center;
 }
 /* weather details */
 
