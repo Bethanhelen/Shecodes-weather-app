@@ -22,6 +22,8 @@ function formatDate(timestamp){
 // create a function that encloses all the html api integration response of temperature, city, wind, humidity, icon and weather description
 
 function showTemperature(response){
+  celsiusTemperature = response.data.main.temp;
+
   let temperatureElement = document.querySelector('#temperature');
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
 
@@ -61,20 +63,25 @@ function Search(city){
   axios.get(apiUrl).then(showTemperature);
 }
 
-let form = document.querySelector('#search-form');
-form.addEventListener('submit', handleSubmit);
-
-Search('New York');
-
 // for the temperature conversion into fahrenheit
 
 function displayFahrenheitTemperature(event){
   event.preventDefault();
 
-  let fahrenheitTemperature = (14*9)/5+32;
   let temperatureElement = document.querySelector('#temperature');
+  let fahrenheitTemperature = (celsiusTemperature*9)/5+32;
+ 
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
+
+celsiusTemperature = null;
+
+let form = document.querySelector('#search-form');
+form.addEventListener('submit', handleSubmit);
+
+Search('New York');
+
+
 
 let fahrenheitLink = document.querySelector('#fahrenheit-link');
 fahrenheitLink.addEventListener('click', displayFahrenheitTemperature);
