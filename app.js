@@ -1,3 +1,24 @@
+// create a function for the date
+function formatDate(timestamp){
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  
+  let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  let day = days[date.getDay()];
+
+  if (minutes < 10){
+    minutes = `0 ${minutes}`;
+  }
+
+  if (hours < 10){
+    minutes = `0 ${hours}`;
+  }
+
+  return `${day} ${hours}:${minutes}` ;
+}
+
+
 // create a function that encloses all the html api integration response of temperature, city, wind, humidity and weather description
 
 function showTemperature(response){
@@ -15,6 +36,9 @@ function showTemperature(response){
 
   let windElement = document.querySelector('#wind');
   windElement.innerHTML = Math.round(response.data.wind.speed);
+
+  let dateElement = document.querySelector('#date');
+  dateElement.innerHTML = formatDate(response.data.dt*1000);
 }
 
 
