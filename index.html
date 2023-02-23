@@ -11,10 +11,14 @@
 <body>
 
   <div class="container">
-    <div class="search-bar">
-      <input type="text" name="" id="" placeholder="Search for a city" />
-      <button type="submit">Search</button>
-    </div>
+    <form class="search-bar" id="search-form">
+      <input type="text" 
+       id="city-input" 
+       placeholder="Search for a city" 
+       class="find"
+       autocomplete="off" />
+      <input type="submit" value="Search" class="button">
+    </form>
 
     <div class="country">
       <div class="city">
@@ -29,8 +33,7 @@
       </ul>
       </div>
       <div class="time">
-        <h6 id="date">
-        </h6>
+        <h6 id="date"></h6>
         <h6 id="description"></h6>
       </div>
     </div>

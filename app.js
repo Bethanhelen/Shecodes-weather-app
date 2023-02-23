@@ -8,11 +8,11 @@ function formatDate(timestamp){
   let day = days[date.getDay()];
 
   if (minutes < 10){
-    minutes = `0 ${minutes}`;
+    minutes = `0${minutes}`;
   }
 
   if (hours < 10){
-    minutes = `0 ${hours}`;
+    hours = `0${hours}`;
   }
 
   return `${day} ${hours}:${minutes}` ;
@@ -45,9 +45,23 @@ function showTemperature(response){
 }
 
 
+// create a function for the input field
+function handleSubmit(event){
+  event.preventDefault();
+ 
+  let cityInputElement = document.querySelector('#city-input');
+ Search(cityInputElement.value);
+}
 
-let apiKey = "62231151ce343c4d68652e1617efc22f";
-let city = 'New York';
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+// create a city function for the city
+function Search(city){
+  let apiKey = "62231151ce343c4d68652e1617efc22f";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  
+  axios.get(apiUrl).then(showTemperature);
+}
 
-axios.get(apiUrl).then(showTemperature);
+let form = document.querySelector('#search-form');
+form.addEventListener('submit', handleSubmit);
+
+Search('New York');
