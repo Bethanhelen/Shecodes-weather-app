@@ -1,4 +1,4 @@
-// create a function that encloses all the html api integration response of temperature, city and weather description
+// create a function that encloses all the html api integration response of temperature, city, wind, humidity and weather description
 
 function showTemperature(response){
   let temperatureElement = document.querySelector('#temperature');
@@ -9,6 +9,12 @@ function showTemperature(response){
 
   let descriptionElement = document.querySelector('#description');
   descriptionElement.innerHTML = response.data.weather[0].description;
+
+  let humidityElement = document.querySelector('#humidity');
+  humidityElement.innerHTML = response.data.main.humidity;
+
+  let windElement = document.querySelector('#wind');
+  windElement.innerHTML = Math.round(response.data.wind.speed);
 }
 
 
