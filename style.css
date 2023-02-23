@@ -94,10 +94,15 @@ body {
 }
 a{
   text-decoration: none;
+  cursor: default;
 }
 .describe{
   display: flex;
   align-items: center;
+}
+.city .active{
+  color: #1d71f2;
+  cursor: default;
 }
 /* weather details */
 
