@@ -1,98 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weather app</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather app</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <form class="search-bar" id="search-form">
+        <input
+          type="text"
+          id="city-input"
+          placeholder="Search for a city"
+          class="find"
+          autocomplete="off"
+        />
+        <input type="submit" value="Search" class="button" />
+      </form>
 
-  <div class="container">
-    <form class="search-bar" id="search-form">
-      <input type="text" 
-       id="city-input" 
-       placeholder="Search for a city" 
-       class="find"
-       autocomplete="off" />
-      <input type="submit" value="Search" class="button">
-    </form>
-
-    <div class="country">
-      <div class="city">
-        <h1 id="city"></h1>
-        <ul class="describe">
-          <img src="" 
-          alt="" 
-          id="icon"
-          class="icon">
-          <li class="wet" id="temperature"></li>
-          <span class="units"><a href="#" id="celsius-link" class="active">°C</a> | <a href="#" id="fahrenheit-link">°F</a></span>
-      </ul>
-      </div>
-      <div class="time">
-        <h6 id="date"></h6>
-        <h6 id="description"></h6>
-      </div>
-    </div>
-
-    <div class="weather">
-      <ul>
-        <li class="line">Wind <br />
-          <span class="range" id="wind"></span>
-          <span class="range">km/hr</span>
-        </li>
-        <li class="templine" >Humidity <br />
-          <span class="range" id="humidity"></span>
-          <span class="range">%</span>
-        </li>
-      </ul>
-    </div>
-
-    <div class="card-details">
-      <h3>Next 5 days forcast</h3>
-      <div class="cards">
-        <div class="card">
-          <p>
-            <span class="cloud">🌩</span> <br />
-            Wed <br />21℃
-          </p>
+      <div class="country">
+        <div class="city">
+          <h1 id="city"></h1>
+          <ul class="describe">
+            <img src="" alt="" id="icon" class="icon" />
+            <li class="wet" id="temperature"></li>
+            <span class="units"
+              ><a href="#" id="celsius-link" class="active">°C</a> |
+              <a href="#" id="fahrenheit-link">°F</a></span
+            >
+          </ul>
         </div>
-        <div class="card">
-          <p>
-            <span class="cloud">🌨</span> <br />
-            Thu <br />1℃
-          </p>
-        </div>
-        <div class="card">
-          <p>
-            <span class="cloud">☀</span> <br />
-            Fri <br />42℃
-          </p>
-        </div>
-        <div class="card">
-          <p>
-            <span class="cloud">🌦</span> <br />
-            Sat <br />11℃
-          </p>
-        </div>
-        <div class="card">
-          <p>
-            <span class="cloud">🌤</span> <br />
-            Sun <br />26℃
-          </p>
+        <div class="time">
+          <h6 id="date"></h6>
+          <h6 id="description"></h6>
         </div>
       </div>
+
+      <div class="weather">
+        <ul>
+          <li class="line">
+            Wind <br />
+            <span class="range" id="wind"></span>
+            <span class="range">km/hr</span>
+          </li>
+          <li class="templine">
+            Humidity <br />
+            <span class="range" id="humidity"></span>
+            <span class="range">%</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card-details">
+        <h3>Next 5 days forcast</h3>
+        <div class="cards">
+          <div class="card">
+            <img src="http://openweathermap.org/img/wn/50d@2x.png" alt="weather-icon" />
+            <div class="weather-day">Wed</div>
+            <div class="weather-temp">21℃</div>
+          </div>
+        
+        </div>
+      </div>
+
+      <footer>Created by Elizabeth Olusipe</footer>
+
+      <a
+        class="github"
+        href="https://github.com/Bethanhelen/Shecodes-weather-app.git"
+        >Github repository</a
+      >
     </div>
-
-    <footer>
-      Created by Elizabeth Olusipe
-    </footer>
-
-    <a  class="github" href="https://github.com/Bethanhelen/Shecodes-weather-app.git">Github repository</a>
-  </div>
-  <script src="app.js"></script>
-</body>
+    <script src="app.js"></script>
+  </body>
 </html>
