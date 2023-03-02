@@ -18,6 +18,25 @@ function formatDate(timestamp){
   return `Last updated: ${day} ${hours}:${minutes}` ;
 }
 
+// weather forecast 
+function displayForecast(){
+  let forecastElement = document.querySelector('#forecast');
+
+  let forecastHTML = `<div class="cards">`;
+  forecastHTML = 
+  forecastHTML +  
+  `
+    <div class="card">
+      <img src="http://openweathermap.org/img/wn/50d@2x.png" alt="weather-icon" />
+      <div class="weather-day">Fri</div>
+      <div class="weather-temp">21℃</div>
+    </div>
+
+  `;
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 
 // create a function that encloses all the html api integration response of temperature, city, wind, humidity, icon and weather description
 
@@ -91,10 +110,13 @@ celsiusTemperature = null;
 let form = document.querySelector('#search-form');
 form.addEventListener('submit', handleSubmit);
 
-Search('New York');
+
 
 let fahrenheitLink = document.querySelector('#fahrenheit-link');
 fahrenheitLink.addEventListener('click', displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector('#celsius-link');
 celsiusLink.addEventListener('click', displaycelsiusTemperature);
+
+Search('New York');
+displayForecast();
