@@ -23,16 +23,23 @@ function displayForecast(){
   let forecastElement = document.querySelector('#forecast');
 
   let forecastHTML = `<div class="cards">`;
-  forecastHTML = 
-  forecastHTML +  
-  `
-    <div class="card">
-      <img src="http://openweathermap.org/img/wn/50d@2x.png" alt="weather-icon" />
-      <div class="weather-day">Fri</div>
-      <div class="weather-temp">21℃</div>
-    </div>
+  let days = ['Thur', 'Fri', 'Sat', 'Sun', 'Mon'];
 
-  `;
+  days.forEach(function (day){
+    forecastHTML = 
+    forecastHTML +  
+    `
+      <div class="card">
+        <img src="http://openweathermap.org/img/wn/50d@2x.png" alt="weather-icon" />
+        <div class="weather-day">${day}</div>
+        <div class="weather-temp">21℃</div>
+      </div>
+  
+    `;
+  })
+
+  
+ 
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
