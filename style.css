@@ -27,13 +27,16 @@ body {
 .search-bar .find {
   padding: 10px;
   width: 50%;
-  background: #fffaed;
-  border: 1px solid gray;
   border-radius: 30px;
   color: gray;
   font-family: "Nunito", sans-serif;
   font-size: 18px;
   margin-right: 10px;
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .search-bar input:focus {
